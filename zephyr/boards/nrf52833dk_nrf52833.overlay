@@ -1,0 +1,24 @@
+/ {
+  pwmleds {
+    compatible = "pwm-leds";
+    pwm_led1: pwm_led_1 {
+      pwms = <&pwm0 14>;
+    };
+    pwm_led2: pwm_led_2 {
+      pwms = <&pwm0 15>;
+    };
+    pwm_led3: pwm_led_3 {
+      pwms = <&pwm0 16>;
+    };
+  };
+};
+
+&pwm0 {
+  status = "okay";
+  ch1-pin = <14>;
+	ch1-inverted;
+  ch2-pin = <15>;
+	ch2-inverted;
+  ch3-pin = <16>;
+	ch3-inverted;
+};
